@@ -4,7 +4,7 @@ import type { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestConf
 import axios from 'axios';
 import * as decode from 'jwt-decode'; // Импортируем как модуль
 const api: AxiosInstance = axios.create({
-   baseURL: 'https://cybergarden.leganyst.ru',
+   baseURL: 'https://cybergarden.leganyst.ru/api',
    withCredentials: true,
    headers: {
       Accept: 'application/json', // Указываем ожидаемый формат ответа
