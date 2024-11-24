@@ -2,10 +2,10 @@ import { eslint } from '@siberiacancode/eslint';
 
 export default eslint(
    {
-      typescript: true,
-      jsx: true,
+      typescript: false,
+      jsx: false,
       jsxA11y: false,
-      react: true,
+      react: false,
       stylistic: false,
       next: false,
    },

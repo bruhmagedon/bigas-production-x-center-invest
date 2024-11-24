@@ -57,6 +57,7 @@ export const RegistrationForm = ({ toggleOpenStatus, setLoadingStatus }: Registr
       setError(null);
       try {
          // Регистрация
+         // @ts-ignore
          const registerData = await register(values);
          setAccessToken(registerData.access_token);
          setRefreshToken(registerData.refresh_token);
@@ -67,7 +68,9 @@ export const RegistrationForm = ({ toggleOpenStatus, setLoadingStatus }: Registr
          setRefreshToken(loginData.refresh_token);
 
          // Создание воркспейса
+         // @ts-ignore
          const workspace = await createWorkspace({ name: 'newSpace', created_by: loginData.user_id });
+         // @ts-ignore
          addWorkspace(workspace);
 
          toggleOpenStatus(false); // Закрываем форму

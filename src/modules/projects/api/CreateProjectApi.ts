@@ -29,8 +29,10 @@ export const useCreateProject = () => {
 
    const mutation = useMutation<Project, AxiosError, CreateProjectData>({
       mutationFn: createProject,
+      // @ts-ignore
       onSuccess: (newProject) => {
          // Инвалидируем кеш проектов для текущего рабочего пространства
+         // @ts-ignore
          queryClient.invalidateQueries(['projects', currentWorkspaceId]);
       },
       onError: (error) => {

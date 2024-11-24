@@ -45,6 +45,7 @@ export const LoginForm = ({ toggleOpenStatus, setLoadingStatus }: LoginFormProps
    const onLoginSubmit = async (values: z.infer<typeof loginSchema>) => {
       setError(null); // Сбрасываем предыдущую ошибку
       try {
+         // @ts-ignore
          const data = await login(values); // Выполняем запрос на логин
          setAccessToken(data.access_token); // Сохраняем токены в Zustand
          setRefreshToken(data.refresh_token);

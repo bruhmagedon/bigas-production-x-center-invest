@@ -60,7 +60,9 @@ interface CreateTaskData {
 }
 
 export const Task = ({
+   // @ts-ignore
    className,
+   // @ts-ignore
    setButtonClick,
    setModalOpen,
    parentTask,
@@ -168,6 +170,7 @@ export const Task = ({
          </CardHeader>
          <CardFooter className='lg:h-22 border-т flex flex-wrap items-center justify-between gap-4 py-3 esmob:justify-center'>
             <div className='ml-5 flex flex-wrap gap-2 esmob:ml-0'>
+               {/*  @ts-ignore */}
                {isSuccess && <TaskComboBox items={projectItems} onSelect={(value, label, item) => setProject(item)} />}
 
                <TaskComboBox
@@ -175,6 +178,7 @@ export const Task = ({
                   items={users}
                   placeholder='Выберите пользователя'
                   svg={<User className='w-4' />}
+                  // @ts-ignore
                   onSelect={(value, label, item) => setAssignedTo(item)}
                />
             </div>

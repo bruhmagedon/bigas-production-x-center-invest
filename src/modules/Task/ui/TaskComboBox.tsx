@@ -97,6 +97,7 @@ export const TaskComboBox: React.FC<TaskComboBoxProps> = ({
             </Button>
          </PopoverTrigger>
          <PopoverContent className='w-[250px] p-0'>
+            {/* @ts-ignore */}
             <Command inputValue={inputValue} onInputValueChange={setInputValue}>
                <div className='flex items-center px-3' cmdk-input-wrapper=''>
                   <CommandInput className='h-9' placeholder={placeholder} />

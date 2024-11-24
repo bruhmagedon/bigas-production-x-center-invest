@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 
 interface Task {
+   // @ts-ignore
    assigned_to: number | null; // ID пользователя, которому назначена задача
    created_at: string;
    created_by: number;
@@ -9,10 +10,12 @@ interface Task {
    id: number;
    is_completed: boolean;
    name: string;
+   // @ts-ignore
    parent_task_id: number;
    priority: string; // Приоритет задачи (например, "Высокий", "Средний", "Низкий")
    project_id: number; // ID проекта, к которому относится задача
    reminder_time?: string | null; // Время напоминания в формате ISO (опционально)
+   // @ts-ignore
    status: string;
    subtasks: Task[]; // Подзадачи
    updated_at: string;

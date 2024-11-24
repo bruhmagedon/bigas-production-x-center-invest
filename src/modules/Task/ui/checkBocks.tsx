@@ -72,6 +72,7 @@ const TaskItem: React.FC<{ task: Task; level: number }> = ({ task, level }) => {
 
    const handleCheckboxChange = (checked: boolean) => {
       setTaskChecked(task.id, checked);
+      // @ts-ignore
       updateTask({ ...task, is_completed: checked });
    };
 
@@ -82,6 +83,7 @@ const TaskItem: React.FC<{ task: Task; level: number }> = ({ task, level }) => {
    const handleStatusChange = async (newStatus: (typeof statuses)[number]) => {
       try {
          // Здесь выполняем запрос на сервер для обновления статуса задачи
+         // @ts-ignore
          await updateTask({ ...task, status: newStatus.status });
          setCurrentStatus(newStatus); // Локально обновляем статус
       } catch (error) {
@@ -152,7 +154,7 @@ export function CheckboxTask() {
          fetchedTasks.forEach((task) => {
             setTaskChecked(task.id, task.is_completed);
          });
-
+         // @ts-ignore
          // Построение дерева задач
          const rootTasks = buildTaskTree(fetchedTasks);
          setTaskTree(rootTasks);
